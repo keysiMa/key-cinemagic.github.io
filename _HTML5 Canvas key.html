@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>_HTML5 Canvas key</title>
+<!-- write your code here -->
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="_HTML5 Canvas key.js?1716747880242"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("4634FF1C590CE04B9E95A67059D610FF");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib._HTML5Canvaskey();
+	stage = new lib.Stage(canvas);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+
+	<div style="border: 2px solid rgba(0, 0, 0, 0);background-color: rgb(0, 0, 0);padding: 50px;">		
+        <center><table>
+       <td><img src="logo.jpeg" style="width: 1000px;margin-right: 400px;"></td>
+        <td><div><img src="wasap.jpeg" style="width: 50px;margin-right: 30px;"><img src="ig.jpeg" style="width: 50px;margin-right: 30px;"><img src="fb.jpeg" style="width: 50px;margin-right: 30px;"><img src="tw.jpeg" style="width: 50px;margin-right: 50px;"></div></td>
+    </table></center>
+	<br><br>
+
+	<center><div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1024px; height:350px">
+		<canvas id="canvas" width="1024" height="350" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1024px; height:350px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div></center>
+	<br><br><br>
+	<div style="padding: 20px;">
+        <table>
+        <tr>
+            <td><div><center><img src="g.jpeg" style="width: 190px;margin-right: 80px; margin-left:80px;border: 2px solid white;padding:3px;"></td></div></center>
+            <td><div><center><img src="b.jpeg" style="width: 170px;margin-right: 80px; margin-left:80px;border: 2px solid white;padding:3px;"></td></div></center>
+            <td><div><center><img src="go.jpeg" style="width: 170px;margin-right: 80px; margin-left:80px;border: 2px solid white;padding:3px;"></td></div></center>
+            <td><div><center><img src="pA.jpeg" style="width: 160px;margin-right: 80px; margin-left:80px;border: 2px solid white;padding:3px;"></td></div></center>
+        </tr>
+        <tr>
+            <td>              
+                <center><em><h4 style="color: white;">GARFIELD LA PELICULA</h4></em></center>             
+                <div style="padding:25px;"><center><p style="color: white;">Tras una inesperada reunión con su largamente 
+                perdido padre, el gato callejero Vic, Garfield y su amigo canino Odie se ven forzados a abandonar 
+                sus perfectas y consentidas vidas al unirse a Vic en un hilarante y muy arriesgado atraco.</p></center>
+                <center><a href="https://cuevana8.live/movies/garfield-la-pelicula-2024/">Ver</a></center></div>      
+            </td>
+            <td>
+                <center><em><h4 style="color: white;">BARBIE</h4></em></center>             
+                <div style="padding:25px;"><center><p style="color: white;">Después de ser expulsada de Barbieland por 
+                no ser una muñeca de aspecto perfecto, Barbie parte hacia el mundo humano para encontrar la verdadera felicidad.</p></center>
+                <center><a href="https://www.cuevana3.red/pelicula/barbie">Ver</a></center></div>     
+            </td>
+            <td>
+                <center><em><h4 style="color: white;">GODZILA-KONG EL NUEVO IMPERIO</h4></em></center>            
+                <div style="padding: 25px;"><center><p style="color: white;">Godzilla y Kong se enfrentan a una amenaza 
+                    colosal escondida en lo profundo del planeta, desafiando su propia existencia y la supervivencia de la raza humana.</p></center>
+                <center><a href="https://cuevana-tv.com/ver/823464/godzilla-y-kong-el-nuevo-imperio.html#">Ver</a></center></div>       
+            </td>
+            <td>
+                <center><em><h4 style="color: white;">KUN FU PANDA 4</h4></em></center>             
+                <div style="padding:25px;"><center><p style="color: white;">Po está entrenando a un nuevo guerrero que ocupe su 
+                lugar para que él pueda convertirse en líder espiritual del Valle de la Paz. Sin embargo, la irrupción de una malvada hechicera que puede cambiar de apariencia trastoca sus planes..</p></center>
+                <center><a href="https://cuevana-tv.com/ver/1011985/kung-fu-panda-4.html#S">Ver</a></center></div>     
+            </td>
+        </tr>
+        <tr>
+            <td><div><center><img src="1.jpeg" style="width: 180px;margin-right: 80px; margin-left:80px;border: 2px solid white;padding:3px;"></td></div></center>
+            <td><div><center><img src="2.jpeg" style="width: 170px;margin-right: 80px; margin-left:80px;border: 2px solid white;padding:3px;"></td></div></center>
+            <td><div><center><img src="3.jpeg" style="width: 170px;margin-right: 80px; margin-left:80px;border: 2px solid white;padding:3px;"></td></div></center>
+            <td><div><center><img src="4.jpeg" style="width: 160px;margin-right: 80px; margin-left:80px;border: 2px solid white;padding:3px;"></td></div></center>
+        </tr>
+        <tr>
+            <td>              
+                <center><em><h4 style="color: white;">AVENGERS INFINITY WAR</h4></em></center>             
+                <div style="padding:20px;"><center><p style="color: white;">El poderoso Thanos, decidido a 
+                hacerse con las Gemas del Infinito para controlar el universo, ataca la nave en la que huyen los 
+                supervivientes de Asgard. Su intención es hacerse con la segunda de las gemas, ahora en manos de Loki.</p></center>
+                <center><a href="https://cuevana-tv.com/ver/299536/vengadores-infinity-war.html#">Ver</a></center></div>      
+            </td>
+            <td>
+                <center><em><h4 style="color: white;">CON TODOS MENOS CONTIGO</h4></em></center>             
+                <div style="padding:25px;"><center><p style="color: white;">A pesar de una primera cita increíble, 
+                la atracción inicial de Bea y Ben se agria rápidamente. Sin embargo, cuando inesperadamente se encuentran 
+                en una boda de destino en Australia, fingen ser la pareja perfecta para mantener las apariencias.</p></center>
+                <center><a href="https://cuevana-tv.com/ver/1072790/cualquiera-menos-t-uacute.html#">Ver</a></center></div>     
+            </td>
+            <td>
+                <center><em><h4 style="color: white;">HABLAME</h4></em></center>            
+                <div style="padding: 25px;"><center><p style="color: white;">Cuando un grupo de amigos descubre cómo 
+                conjurar espíritus con una mano embalsamada, quedan enganchados al nuevo y emocionante juego de alto riesgo, 
+                hasta que uno de ellos va demasiado lejos y desata aterradoras fuerzas sobrenaturales.</p></center>
+                <center><a href="https://cuevana-tv.com/ver/1008042/h-aacute-blame.html#">Ver</a></center></div>       
+            </td>
+            <td>
+                <center><em><h4 style="color: white;">ELEMENTAL</h4></em></center>             
+                <div style="padding:25px;"><center><p style="color: white;">En una ciudad en la que conviven el fuego, 
+                el agua, la tierra y el aire, una joven fogosa y un chico que se deja llevar descubren algo elemental: lo mucho que tienen en común.</p></center>
+                <center><a href="https://cuevana-tv.com/ver/976573/elemental.html#">Ver</a></center></div>     
+            </td>
+        </tr>
+        </table>
+        </div>
+		</div>
+</body>
+</html>
